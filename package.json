@@ -1,0 +1,33 @@
+{
+  "name": "electron-react-starter",
+  "version": "0.0.1",
+  "main": "./build/main/main.js",
+  "type": "commonjs",
+  "scripts": {
+    "build:electron": "tsc --project tsconfig.electron.json",
+    "build:renderer": "tsc && vite build",
+    "start": "electron .",
+    "dev": "cross-env NODE_ENV=development node ./scripts/dev.js ",
+    "dev:vite": "vite",
+    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.15",
+    "@types/react-dom": "^18.2.7",
+    "@typescript-eslint/eslint-plugin": "^6.7.3",
+    "@typescript-eslint/parser": "^6.7.3",
+    "@vitejs/plugin-react-swc": "^3.3.2",
+    "concurrently": "^8.2.1",
+    "cross-env": "^7.0.3",
+    "electron": "^26.2.3",
+    "eslint": "^8.50.0",
+    "eslint-plugin-react": "^7.33.2",
+    "typescript": "^5.0.2",
+    "vite": "^4.4.5"
+  }
+}
