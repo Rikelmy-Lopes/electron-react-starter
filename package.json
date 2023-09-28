@@ -6,11 +6,11 @@
   "scripts": {
     "build:electron": "tsc --project tsconfig.electron.json",
     "build:renderer": "tsc && vite build",
-    "start": "electron .",
-    "dev": "cross-env NODE_ENV=development node ./scripts/dev.js ",
-    "dev:vite": "vite",
+    "dev": "cross-env NODE_ENV=development concurrently \"npm run dev:renderer\"  \"npm run dev:electron\"",
+    "dev:electron": "nodemon -e ts --ignore src/renderer --watch src --exec \"npm run build:electron && electron .\"",
+    "dev:renderer": "vite",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview"
+    "preview": "concurrently \"npm run build:electron\"  \"npm run build:renderer\" && electron ."
   },
   "dependencies": {
     "react": "^18.2.0",
@@ -27,6 +27,7 @@
     "electron": "^26.2.3",
     "eslint": "^8.50.0",
     "eslint-plugin-react": "^7.33.2",
+    "nodemon": "^3.0.1",
     "typescript": "^5.0.2",
     "vite": "^4.4.5"
   }

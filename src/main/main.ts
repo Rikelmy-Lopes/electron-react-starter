@@ -11,9 +11,9 @@ const createWindow = () => {
     if(isDev) {
         win.loadURL('http://localhost:5173');
         win.webContents.openDevTools();
+        win.removeMenu();
     } else {
         win.loadFile(join(__dirname, '../renderer/index.html'));
-        win.webContents.openDevTools();
     }
 };
 
