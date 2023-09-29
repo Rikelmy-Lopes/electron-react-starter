@@ -1,3 +1,5 @@
+<img src="banner.png" width="100%"> </img>
+<br>
 # Electron-React-Starter
 Are you tired of configuring Electron with React? Or dealing with Electron React boilerplates filled with unnecessary components? Look no further! Electron-React-Starter is the solution. It's fast, lightweight and flexible.
 
