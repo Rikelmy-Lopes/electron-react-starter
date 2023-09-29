@@ -2,6 +2,7 @@ import { app, BrowserWindow } from 'electron';
 import { join } from 'path';
 
 const isDev = process.env.NODE_ENV === 'development';
+const PORT = process.env.PORT ? Number(process.env.PORT) : 5173;
 
 const createWindow = () => {
     const win = new BrowserWindow({
@@ -9,9 +10,8 @@ const createWindow = () => {
         height: 600
     });
     if(isDev) {
-        win.loadURL('http://localhost:5173');
+        win.loadURL(`http://localhost:${PORT}`);
         win.webContents.openDevTools();
-        win.removeMenu();
     } else {
         win.loadFile(join(__dirname, '../renderer/index.html'));
     }
