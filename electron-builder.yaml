@@ -1,0 +1,27 @@
+appId: electron.react.starter
+asar: true
+productName: electron-react-starter
+directories:
+  output: release/${version}
+
+files:
+  - build
+
+win:
+  target:
+    - target: nsis
+      arch:
+        - x64
+  artifactName: "${productName}_${version}.${ext}"
+
+linux:
+  target:
+    - AppImage
+    # - deb
+    # - snap
+  category: Utility
+nsis:
+  oneClick: false
+  perMachine: false
+  allowToChangeInstallationDirectory: true
+  deleteAppDataOnUninstall: false
