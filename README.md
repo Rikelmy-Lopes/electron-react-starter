@@ -22,3 +22,5 @@ To package your app for the local platform:
 ```bash
 npm run package
 ```
+## Lisence
+MIT © <a href="https://github.com/Rikelmy-Lopes/electron-react-starter"> Electron React Starter</a>
